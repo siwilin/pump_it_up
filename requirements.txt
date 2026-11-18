@@ -1,0 +1,2 @@
+# Install the reproducible project environment, including development tools.
+-e .[dev]

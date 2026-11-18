@@ -1,0 +1,11 @@
+{
+  "selected_models": [
+    "catboost_balanced_depth6",
+    "catboost_balanced_depth8",
+    "extra_trees_balanced_leaf2",
+    "rf_balanced_100",
+    "rf_balanced_depth20",
+    "rf_balanced_leaf2"
+  ],
+  "default_model": "rf_balanced_leaf2"
+}
