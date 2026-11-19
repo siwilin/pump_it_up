@@ -44,11 +44,14 @@ External leaderboard results observed during development were:
 
 | Submission | Score |
 | --- | ---: |
+| Random Forest, unbalanced | **0.8171** |
+| Extra Trees, unbalanced | 0.8134 |
+| LightGBM, unbalanced | 0.7890 |
 | Random Forest, balanced leaf 2 | 0.7962 |
 | Extra Trees, balanced leaf 2 | 0.7919 |
 | CatBoost, balanced depth 8 | 0.6912 |
 
-These external scores show that the model optimised for maintenance recall is not automatically the best competition model.
+The unbalanced Random Forest is the current competition baseline. These external scores show that the model optimised for maintenance recall is not automatically the best competition model.
 
 ## Limitations and risks
 
