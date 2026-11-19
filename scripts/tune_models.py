@@ -49,6 +49,9 @@ def model_configs() -> dict[str, object]:
             random_state=42,
             n_jobs=-1,
         ),
+        "rf_unbalanced_100": RandomForestClassifier(
+            n_estimators=100, random_state=42, n_jobs=-1
+        ),
         "extra_trees_balanced_100": ExtraTreesClassifier(
             n_estimators=100, class_weight="balanced", random_state=42, n_jobs=-1
         ),
@@ -58,6 +61,9 @@ def model_configs() -> dict[str, object]:
             class_weight="balanced",
             random_state=42,
             n_jobs=-1,
+        ),
+        "extra_trees_unbalanced_100": ExtraTreesClassifier(
+            n_estimators=100, random_state=42, n_jobs=-1
         ),
         "extra_trees_balanced_features70": ExtraTreesClassifier(
             n_estimators=100,
