@@ -84,8 +84,8 @@ def main() -> None:
         confusion_results[model_name] = aggregate_matrix.tolist()
         print(f"Completed {model_name}", flush=True)
 
-    reports_dir = PROJECT_ROOT / "reports"
-    reports_dir.mkdir(exist_ok=True)
+    reports_dir = PROJECT_ROOT / "reports" / "metrics"
+    reports_dir.mkdir(parents=True, exist_ok=True)
     results = pd.DataFrame(rows).sort_values("macro_f1_mean", ascending=False)
     results.to_csv(reports_dir / "cross_validation_results.csv", index=False)
     (reports_dir / "cross_validation_confusion_matrices.json").write_text(

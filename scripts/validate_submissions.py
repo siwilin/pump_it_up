@@ -15,12 +15,16 @@ from src.submissions import submission_summary, validate_submission
 
 
 def main() -> None:
-    """Validate every generated submission under ``reports/``."""
+    """Validate every generated submission under ``reports/submissions/``."""
     _, _, test_values = load_pump_it_up_data(PROJECT_ROOT / "data")
     expected_ids = test_values["id"]
-    files = sorted((PROJECT_ROOT / "reports").glob("submission_*.csv"))
+    files = sorted(
+        (PROJECT_ROOT / "reports" / "submissions").glob("submission_*.csv")
+    )
     if not files:
-        raise FileNotFoundError("No submission_*.csv files found under reports/")
+        raise FileNotFoundError(
+            "No submission_*.csv files found under reports/submissions/"
+        )
 
     for file_path in files:
         submission = pd.read_csv(file_path)

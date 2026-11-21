@@ -27,7 +27,9 @@ def select_models(results: pd.DataFrame) -> list[str]:
 
 
 def main() -> None:
-    reports_dir = PROJECT_ROOT / "reports"
+    reports_dir = PROJECT_ROOT / "reports" / "metrics"
+    submissions_dir = PROJECT_ROOT / "reports" / "submissions"
+    submissions_dir.mkdir(parents=True, exist_ok=True)
     models_dir = PROJECT_ROOT / "models"
     models_dir.mkdir(exist_ok=True)
     results = pd.read_csv(reports_dir / "cross_validation_results.csv")
@@ -50,7 +52,7 @@ def main() -> None:
         predictions = np.asarray(pipeline.predict(test_values)).reshape(-1)
         joblib.dump(pipeline, models_dir / f"{name}.joblib")
         submission = pd.DataFrame({"id": test_ids, "status_group": predictions})
-        submission.to_csv(reports_dir / f"submission_{name}.csv", index=False)
+        submission.to_csv(submissions_dir / f"submission_{name}.csv", index=False)
         print(f"Trained and exported {name}", flush=True)
 
     (reports_dir / "model_selection.json").write_text(

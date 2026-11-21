@@ -78,7 +78,7 @@ The unbalanced tree models improved leaderboard accuracy substantially: Random F
 app/          Streamlit decision-support demo
 data/         Local competition data; excluded from version control
 notebooks/    Exploratory analysis and model experiments
-reports/      Executed notebooks and generated evaluation artifacts
+reports/      Executed notebooks, metrics and competition submissions
 src/          Reusable data, EDA, preprocessing and modelling code
 tests/        Automated tests for project utilities
 ```
@@ -127,9 +127,16 @@ Key files:
    python scripts/validate_submissions.py
    ```
 
-6. Open the notebooks from the repository root and run them in order. Executed copies are stored under `reports/`.
+6. Open the notebooks from the repository root and run them in order. Executed copies are stored under `reports/executed_notebooks/`.
 
-7. To train the selected portfolio models and prepare the demo artifacts:
+7. To generate one or more competition submissions from the central model registry:
+
+   ```bash
+   python scripts/generate_submissions.py --list-models
+   python scripts/generate_submissions.py --models rf_unbalanced_leaf2_400 extra_trees_unbalanced_leaf2
+   ```
+
+8. To train the selected portfolio models and prepare the demo artifacts:
 
    ```bash
    python scripts/train_selected_models.py
