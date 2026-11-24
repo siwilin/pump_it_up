@@ -63,14 +63,19 @@ The first external submissions exposed an important trade-off between the compet
 
 | Submission | DrivenData score |
 | --- | ---: |
-| Random Forest, unbalanced | **0.8171** |
+| Random Forest, unbalanced, leaf 2, 600 trees | **0.8234** |
+| Random Forest, unbalanced, leaf 2, 800 trees | 0.8230 |
+| Extra Trees, unbalanced, leaf 2, max features 0.7 | 0.8142 |
+| Random Forest, unbalanced, leaf 2, 400 trees | 0.8228 |
+| Extra Trees, unbalanced, leaf 2 | 0.8201 |
+| Random Forest, unbalanced | 0.8171 |
 | Extra Trees, unbalanced | 0.8134 |
 | LightGBM, unbalanced | 0.7890 |
 | Random Forest, balanced leaf 2 | 0.7962 |
 | Extra Trees, balanced leaf 2 | 0.7919 |
 | CatBoost, balanced depth 8 | 0.6912 |
 
-The unbalanced tree models improved leaderboard accuracy substantially: Random Forest reached the current best score of `0.8171`, followed by Extra Trees at `0.8134`. LightGBM reached `0.7890`, confirming that the model family and class distribution both matter for the competition objective. The results are documented rather than hidden: class balancing improved repair recall locally but over-predicted the minority class for the leaderboard metric.
+The unbalanced tree models improved leaderboard accuracy substantially. The current best result is Random Forest with `min_samples_leaf=2` and 600 trees at `0.8234`; the 800-tree variant reached `0.8230`. LightGBM reached `0.7890`, confirming that the model family and class distribution both matter for the competition objective. The results are documented rather than hidden: class balancing improved repair recall locally but over-predicted the minority class for the leaderboard metric.
 
 ## Project structure
 

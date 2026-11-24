@@ -44,14 +44,19 @@ External leaderboard results observed during development were:
 
 | Submission | Score |
 | --- | ---: |
-| Random Forest, unbalanced | **0.8171** |
+| Random Forest, unbalanced, leaf 2, 600 trees | **0.8234** |
+| Random Forest, unbalanced, leaf 2, 800 trees | 0.8230 |
+| Extra Trees, unbalanced, leaf 2, max features 0.7 | 0.8142 |
+| Random Forest, unbalanced, leaf 2, 400 trees | 0.8228 |
+| Extra Trees, unbalanced, leaf 2 | 0.8201 |
+| Random Forest, unbalanced | 0.8171 |
 | Extra Trees, unbalanced | 0.8134 |
 | LightGBM, unbalanced | 0.7890 |
 | Random Forest, balanced leaf 2 | 0.7962 |
 | Extra Trees, balanced leaf 2 | 0.7919 |
 | CatBoost, balanced depth 8 | 0.6912 |
 
-The unbalanced Random Forest is the current competition baseline. These external scores show that the model optimised for maintenance recall is not automatically the best competition model.
+The unbalanced Random Forest with `min_samples_leaf=2` and 600 trees is the current competition baseline at `0.8234`. These external scores show that the model optimised for maintenance recall is not automatically the best competition model.
 
 ## Limitations and risks
 
